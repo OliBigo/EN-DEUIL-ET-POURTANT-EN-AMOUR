@@ -1,7 +1,7 @@
-@import 'primevue/resources/themes/md-light-indigo/theme.css';
 
 #app {
   margin: 0 auto;
-  padding: 2%;
+  padding: 1%;
   font-weight: normal;
+  background-color: whitesmoke;
 }
