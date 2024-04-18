@@ -9,7 +9,7 @@ export default {
     const height = ref(500);
 
     onMounted(() => {
-        height.value = el.value.clientHeight * 0.5;
+        height.value = el.value.clientHeight * 0.2;
     });
 
     return {
@@ -24,8 +24,8 @@ export default {
 
 <template>
   <div class="authors" ref="el">
-    <v-card>
-      <v-card-title>Les auteurs</v-card-title>
+    <v-card class="card-authors">
+      <v-card-title>Quatrième de couverture</v-card-title>
       <v-card-text>
         <v-container>
           <v-row>
@@ -102,7 +102,7 @@ export default {
         <div style="text-align: center">
           <h2>Elle et Lui</h2>
           <br />
-          <p>
+          <p id="text-fin">
             Ce témoignage romanesque se veut une lueur d’espoir pour toute
             personne seule à la recherche de l’amour, peu importe son âge...
           </p>
@@ -114,8 +114,7 @@ export default {
 
 <style scoped>
 .authors {
-  height: 80vh;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 .author-image {
   max-height: 500px;
@@ -123,5 +122,14 @@ export default {
 }
 p {
   text-align: justify;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.card-authors {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#text-fin {
+  text-align: center;
 }
 </style>
