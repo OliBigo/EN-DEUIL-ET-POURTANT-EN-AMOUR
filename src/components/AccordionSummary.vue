@@ -1,6 +1,7 @@
 <script>
 import Comments from "@/components/Comments.vue";
-import pdf from "@/assets/EN_DEUIL_ET_POURTANT_NUMÉRIQUE_24_MARS.pdf";
+import pdf from "@/public/EN_DEUIL_ET_POURTANT_NUMÉRIQUE_24_MARS.pdf";
+import epub from "@/public/EN_DEUIL_ET_POURTANT_EN_AMOUR_19_avril_2024.epub"
 const dataSommaire = {
   titre: [
     "En deuil et pourtant en amour",
@@ -90,7 +91,8 @@ export default {
   data() {
     return {
       dataSommaire,
-      pdf
+      pdf,
+      epub
     };
   },
 };
@@ -178,7 +180,7 @@ export default {
           >Télécharger le livre en format PDF (ordinateur et tablette)</a
         >
         <br />
-        <a :href="pdf" download="En deuil et pourtant en amour.pdf"
+        <a :href="epub" download="En deuil et pourtant en amour.epub"
           >Télécharger le livre en format ePub (liseuse)</a
         >
       </v-expansion-panel-text>

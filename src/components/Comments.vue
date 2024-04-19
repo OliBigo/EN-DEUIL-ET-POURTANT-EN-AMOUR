@@ -4,6 +4,11 @@ import VueCusdis from "vue-cusdis";
 
 export default {
   components: { VueCusdis },
+  data() {
+    return {
+      cusdisAppId: import.meta.env.VITE_CUSDIS_APP_ID,
+    };
+  },
 };
 </script>
 
@@ -11,7 +16,7 @@ export default {
   <vue-cusdis
     :attrs="{
       host: 'https://cusdis.com',
-      appId: 'a4c1a578-c94a-4c7f-8936-00c2b9e1a492',
+      appId: cusdisAppId,
       pageId: 'PAGE_ID',
     }"
 
