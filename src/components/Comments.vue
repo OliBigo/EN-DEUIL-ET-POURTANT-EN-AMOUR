@@ -1,25 +1,46 @@
 <script>
-// For Vue 3
-import VueCusdis from "vue-cusdis";
-
 export default {
-  components: { VueCusdis },
   data() {
     return {
       cusdisAppId: import.meta.env.VITE_CUSDIS_APP_ID,
+      comments: [],
     };
+  },
+  created() {
+    this.getComments();
+  },
+  methods: {
+    getComments() {
+      fetch(
+        `https://cusdis.com/api/open/comments?page=1&appId=${this.cusdisAppId}&pageId=PAGE_ID`,
+        {
+          method: "GET",
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          this.comments = data.data.data;
+        });
+    },
   },
 };
 </script>
 
 <template>
-  <vue-cusdis
-    :attrs="{
-      host: 'https://cusdis.com',
-      appId: cusdisAppId,
-      pageId: 'PAGE_ID',
-    }"
-
-    lang="fr"
-  ></vue-cusdis>
+  <v-list>
+    <v-list-item v-for="comment in comments" :key="comment.id">
+      <v-card variant="tonal">
+        <v-card-title>{{ comment.by_nickname }}</v-card-title>
+        <v-card-subtitle>{{ new Date(comment.createdAt).toLocaleString() }}</v-card-subtitle>
+        <v-card-text>{{ comment.content }}</v-card-text>
+      </v-card>
+      
+    </v-list-item>
+  </v-list>
 </template>
+
+<style scoped>
+.v-card-title {
+  text-align: left !important;
+}
+</style>

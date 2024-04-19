@@ -155,24 +155,6 @@ export default {
               </v-list>
             </td>
           </tr>
-
-          <tr>
-            <th><b>Description</b></th>
-            <td>
-              <p v-for="(desc, i) in dataSommaire.description" :key="i">
-                {{ desc }}
-              </p>
-            </td>
-          </tr>
-
-          <tr>
-            <th><b>Coordonnées</b></th>
-            <td>
-              <p v-for="(coord, i) in dataSommaire.coordonnées" :key="i">
-                {{ coord.name }} - {{ coord.address }} - <a :href="`tel: ${coord.phone}`">{{ coord.phone }}</a> - <a :href="`mailto: ${coord.email}`">{{ coord.email }}</a>
-              </p>
-            </td>
-          </tr>
         </tbody>
       </v-table>
     </v-card-text>

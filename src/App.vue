@@ -100,7 +100,7 @@ p {
 }
 
 .accordion {
-  width: 50%;
+  width: 60%;
 }
 
 @media (min-width: 1024px) {

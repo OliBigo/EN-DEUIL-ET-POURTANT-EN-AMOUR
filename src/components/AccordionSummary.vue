@@ -2,6 +2,7 @@
 import Comments from "@/components/Comments.vue";
 import pdf from "@/public/EN_DEUIL_ET_POURTANT_NUMÉRIQUE_24_MARS.pdf";
 import epub from "@/public/EN_DEUIL_ET_POURTANT_EN_AMOUR_19_avril_2024.epub"
+import AddComment from './AddComment.vue';
 const dataSommaire = {
   titre: [
     "En deuil et pourtant en amour",
@@ -87,6 +88,7 @@ const dataSommaire = {
 export default {
   components: {
     Comments,
+    AddComment,
   },
   data() {
     return {
@@ -189,12 +191,14 @@ export default {
     <v-expansion-panel>
       <v-expansion-panel-title>Ajouter un commentaire</v-expansion-panel-title>
       <v-expansion-panel-text>
-        <input type="text" />
+        <add-comment />
       </v-expansion-panel-text>
     </v-expansion-panel>
   </v-expansion-panels>
 </template>
 
 <style scoped>
-
+.v-expansion-panel-text {
+  text-align: justify;
+}
 </style>
