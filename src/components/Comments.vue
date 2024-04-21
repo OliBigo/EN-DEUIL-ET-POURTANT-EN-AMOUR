@@ -19,7 +19,7 @@ export default {
       )
         .then((response) => response.json())
         .then((data) => {
-          this.comments = data.data.data;
+          this.comments = data.data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         });
     },
   },

@@ -9,7 +9,7 @@ export default {
     const height = ref(500);
 
     onMounted(() => {
-        height.value = el.value.clientHeight * 0.2;
+        height.value = el.value.clientHeight * 0.25;
     });
 
     return {
@@ -114,7 +114,7 @@ export default {
 
 <style scoped>
 .authors {
-  margin-bottom: 10%;
+  margin-bottom: 5vh;
 }
 .author-image {
   max-height: 500px;

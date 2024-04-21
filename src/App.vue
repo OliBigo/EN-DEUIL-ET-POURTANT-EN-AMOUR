@@ -2,14 +2,12 @@
 import imageCouverture from "@/assets/En_deuil_et_pourtant_en_amour_-_Suzanne_Bougie_et_Real_Burelle.jpg";
 import PDFViewer from "pdf-viewer-vue";
 import Authors from "@/components/Authors.vue";
-import TableSummary from "@/components/TableSummary.vue";
 import AccordionSummary from "@/components/AccordionSummary.vue";
 
 export default {
   components: {
     PDFViewer,
     Authors,
-    TableSummary,
     AccordionSummary,
   },
   data() {
@@ -25,7 +23,6 @@ export default {
     <div class="container">
       <div class="page">
         <v-card class="card">
-          <v-card-title>En deuil et pourtant en amour</v-card-title>
           <v-card-text>
             <v-img
               id="couverture"
@@ -39,12 +36,6 @@ export default {
       <div class="page">
         <div class="accordion">
           <Authors />
-        </div>
-      </div>
-
-      <div class="page">
-        <div class="accordion">
-          <table-summary />
         </div>
       </div>
 
@@ -91,7 +82,7 @@ p {
 
 .card {
   margin-bottom: 5%;
-  width: 45%;
+  width: 50%;
 }
 
 :deep(.v-card-title) {
@@ -100,7 +91,7 @@ p {
 }
 
 .accordion {
-  width: 60%;
+  width: 80%;
 }
 
 @media (min-width: 1024px) {

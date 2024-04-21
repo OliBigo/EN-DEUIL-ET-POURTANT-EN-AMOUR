@@ -1,8 +1,8 @@
 <script>
 import Comments from "@/components/Comments.vue";
 import pdf from "@/public/EN_DEUIL_ET_POURTANT_NUMÉRIQUE_24_MARS.pdf";
-import epub from "@/public/EN_DEUIL_ET_POURTANT_EN_AMOUR_19_avril_2024.epub"
-import AddComment from './AddComment.vue';
+import epub from "@/public/EN_DEUIL_ET_POURTANT_EN_AMOUR_19_avril_2024.epub";
+import AddComment from "./AddComment.vue";
 const dataSommaire = {
   titre: [
     "En deuil et pourtant en amour",
@@ -11,39 +11,8 @@ const dataSommaire = {
   sommaire: [
     "Écrit à quatre mains, le récit de deux endeuillés à qui la vie offre l’immense privilège d’aimer à nouveau. Malgré leurs amours en allées résonnant toujours sur les pavés de leur passé, ce bonheur défie leur vieillissement. Complicité, amitié, tendresse et, à leur étonnement, sensualité et sexualité sont au rendez-vous.",
     "Elle et Lui s’expriment à tour de rôle afin de raconter leur cheminement. En prenant le risque de se rendre vulnérables, en prenant le temps de s’apprivoiser, en entrelaçant leurs mots, un nouveau Nous apparaît! Dans le respect de leur autonomie, en dépit de l’âge, en dépit de la tristesse, la joie d’être à deux les comblent encore une fois!",
-  ],
-  publicCible:
     "Ce témoignage se lit comme un roman. Il se veut une lueur d’espoir pour toute personne seule à la recherche de l’amour, particulièrement les 50 ans et plus.",
-  publications: {
-    "Suzanne Bougie": [
-      {
-        titre: "Chavirée",
-        editeur: "Éditions Québec/Amérique",
-      },
-      {
-        titre: "Les Mémoires de mon corps",
-        editeur: "Éditions Québec/Amérique",
-      },
-      {
-        titre: "Dans mon ventre",
-        editeur: "Éditions Presses Sélect",
-      },
-      {
-        titre: "Témoignage d’une endeuillée",
-        editeur: "Auto-édition",
-      },
-      {
-        titre: "Ma vie telle l’eau vive",
-        editeur: "Auto-édition",
-      },
-    ],
-    "Réal Burelle": [
-      {
-        titre: "Chemins de traverse",
-        editeur: "L’Encrier salin",
-      },
-    ],
-  },
+  ],
   chapitres: [
     "Sur l’oreiller",
     "Qui es-tu?",
@@ -83,56 +52,75 @@ const dataSommaire = {
     "Suzanne Bougie – 1255, rue Dion, Val-David (Québec) J0N 2N0 (514) 892-3106 – suzannebougie13@gmail.com",
     "Réal Burelle – 218-1811, rue de Clignancourt, Saint-Jérôme (Québec) (438) 988-1024 – realburelle@hotmail.com",
   ],
+  feedback: [
+    [
+      "Me voici soulagé, car je redoutais que l’ivresse de votre amour naissant n’éclabousse des endeuillés encore aux prises avec leur chagrin ou toujours à la recherche de l’âme sœur. C’est la sobriété de la narration qui concourt à mon soulagement.",
+      "Vous vous exprimez spontanément, sans filtre, mais sans vous laisser entraîner par votre plaisir évident d’écrire. En plus de l’expression claire et du ton naturel, cette sobriété contribue à garder son élan à votre récit et à soutenir l’intérêt. Toutefois, cela ne m’a pas empêché de verser quelques larmes lors de l’évocation des circonstances ayant entouré le décès de votre conjoint, de votre conjointe.",
+      "J’aime la liberté avec laquelle vous faites référence à Richard et à Micheline tout au long de votre récit. J’y ai découvert des scènes attendrissantes et fort belles. Ces références font partie intégrante de votre projet et vous les faites avec tact.",
+      "Les poèmes sont bien choisis et offrent un écho senti de votre histoire.",
+    ],
+    [
+      "J’ai été émue et captivée par cette unique introspection à deux voix qui se lit aisément grâce à une écriture remarquable, vivante, rythmée, imagée. Prose et poésie se relancent et se complètent tout au long de ce cheminement de l’ombre à la lumière.",
+      "L’intimité partagée de ces deux endeuillés amoureux est touchante et porte à la réflexion. J’ai essuyé quelques larmes en lisant des passages poignants, mais j’ai ri aussi devant les hésitations et les doutes de ces deux « ados » septuagénaires redécouvrant l’amour. Bravo!",
+    ],
+    [
+      "Votre témoignage est absolument convaincant. Le récit des décès de vos partenaires fait pleurer, mais nous sommes vite réconfortés par les moments de tendresse et d’amour authentiques qui jalonnent votre parcours.",
+      "L’émerveillement que vous vivez grâce à cette nouvelle histoire d’amour, malgré les souvenirs pénibles en arrière-fond, est fort inspirant. Votre écriture à tous les deux est belle, riche et agréable à lire.",
+    ],
+    [
+      "Quelle originalité que de nous présenter vos premiers courriels, vos douces correspondances. J’ai aimé lire vos amours passées et nouvelles. Merci de nous décrire vos corps qui vibrent, pourquoi diantre cesseraient-ils? En tous cas, comme vous, moi, j’y crois. Vive les ressacs océaniques!",
+      "Réal, quels magnifiques poèmes et quelle délicatesse t’habite. Suzanne, ce que je suis de nouveau chavirée en lisant les trois extraits de ton Témoignage d’une endeuillée. Quelle superbe idée!",
+      "Je vous remercie d’avoir partagé vos états d’âme, votre belle écriture, vos talents respectifs et surtout votre sensibilité. Longue vie à vous deux dans l’intensité.",
+    ],
+  ],
 };
 
 export default {
+  mounted() {
+    const text = document.createElement("p");
+    text.style.textAlign = "justify";
+    text.style.padding = "5px 24px 0px 24px";
+    //text.style.cursor = "pointer";
+    text.style.fontSize = "0.9em";
+    text.style.color = "#696969";
+    /*text.onmouseenter = () => {
+      text.style.backgroundColor = "#F6F6F6";
+    };
+    text.onmouseleave = () => {
+      text.style.backgroundColor = "transparent";
+    };*/
+
+    const node = document.createTextNode(
+      "Après votre lecture, cliquez ici pour ajouter vos commentaires. Nous aimerions beaucoup connaître vos impressions. Ce sera notre plus belle récompense. Merci à l'avance!"
+    );
+    text.appendChild(node);
+    const parentElement = document.getElementById("comments");
+    console.log(document.getElementById("comments").childNodes[1])
+    text.onclick = () => {
+      this.panel = 5;
+      console.log("allo")
+      document.getElementById("comments").scrollIntoView();
+    };
+    parentElement.insertBefore(text, parentElement.childNodes[5]);
+    //document.getElementById("comments").appendChild(text);
+  },
   components: {
     Comments,
     AddComment,
   },
   data() {
     return {
+      panel: undefined,
       dataSommaire,
       pdf,
-      epub
+      epub,
     };
   },
 };
 </script>
 
 <template>
-  <v-expansion-panels variant="accordion">
-    <v-expansion-panel>
-      <v-expansion-panel-title>Public cible</v-expansion-panel-title>
-      <v-expansion-panel-text>{{
-        dataSommaire.publicCible
-      }}</v-expansion-panel-text>
-    </v-expansion-panel>
-
-    <v-expansion-panel>
-      <v-expansion-panel-title>Auteurs</v-expansion-panel-title>
-      <v-expansion-panel-text>
-        <v-list lines="one" style="padding: 0">
-          <v-list-group
-            v-for="(author, i) in Object.keys(dataSommaire.publications)"
-            :key="i"
-          >
-            <template v-slot:activator="{ props }">
-              <v-list-item v-bind="props" :title="author" />
-            </template>
-
-            <v-list-item
-              v-for="(pub, j) in dataSommaire.publications[author]"
-              :key="j"
-            >
-              <v-list-item-title>{{ pub.titre }}</v-list-item-title>
-              <v-list-item-subtitle>{{ pub.editeur }}</v-list-item-subtitle>
-            </v-list-item>
-          </v-list-group>
-        </v-list>
-      </v-expansion-panel-text>
-    </v-expansion-panel>
-
+  <v-expansion-panels variant="accordion" v-model="panel">
     <v-expansion-panel>
       <v-expansion-panel-title>Sommaire</v-expansion-panel-title>
       <v-expansion-panel-text
@@ -149,7 +137,7 @@ export default {
           <v-list-item
             v-for="(chapter, i) in dataSommaire.chapitres"
             :key="i"
-            :title="`${i + 1} - ${chapter}`"
+            :title="`${chapter}`"
           /> </v-list
       ></v-expansion-panel-text>
     </v-expansion-panel>
@@ -159,24 +147,36 @@ export default {
       <v-expansion-panel-text
         v-for="(text, i) in dataSommaire.extrait"
         :key="i"
-        >{{ text }}</v-expansion-panel-text
       >
-    </v-expansion-panel>
-
-    <v-expansion-panel>
-      <v-expansion-panel-title>Commentaires</v-expansion-panel-title>
-      <v-expansion-panel-text><comments /></v-expansion-panel-text>
-    </v-expansion-panel>
-
-    <v-expansion-panel>
-      <v-expansion-panel-title>Lecture sur le site web</v-expansion-panel-title>
-      <v-expansion-panel-text>
-        <PDFViewer :src="pdf" />
+        {{ text }}
       </v-expansion-panel-text>
     </v-expansion-panel>
 
     <v-expansion-panel>
-      <v-expansion-panel-title>Télécharger le livre</v-expansion-panel-title>
+      <v-expansion-panel-title
+        >Qu'en pense le comité de lecture</v-expansion-panel-title
+      >
+      <v-expansion-panel-text>
+        <v-list lines="two">
+          <v-list-item v-for="(comment, i) in dataSommaire.feedback" :key="i">
+            <v-card variant="tonal">
+              <v-card-text
+                v-for="(paragraph, j) in comment"
+                :key="j"
+                :class="j !== 0 ? 'comments-text' : null"
+              >
+                {{ paragraph }}
+              </v-card-text>
+            </v-card>
+          </v-list-item>
+        </v-list>
+      </v-expansion-panel-text>
+    </v-expansion-panel>
+
+    <v-expansion-panel>
+      <v-expansion-panel-title
+        >Choisir votre mode de lecture gratuit</v-expansion-panel-title
+      >
       <v-expansion-panel-text>
         <a :href="pdf" download="En deuil et pourtant en amour.pdf"
           >Télécharger le livre en format PDF (ordinateur et tablette)</a
@@ -185,11 +185,15 @@ export default {
         <a :href="epub" download="En deuil et pourtant en amour.epub"
           >Télécharger le livre en format ePub (liseuse)</a
         >
+        <br />
+        <a :href="pdf" target="_blank">Lire directement en cliquant ici</a>
       </v-expansion-panel-text>
     </v-expansion-panel>
 
-    <v-expansion-panel>
-      <v-expansion-panel-title>Ajouter un commentaire</v-expansion-panel-title>
+    <v-expansion-panel id="comments">
+      <v-expansion-panel-title
+        >Ajoutez vos commentaires
+      </v-expansion-panel-title>
       <v-expansion-panel-text>
         <add-comment />
       </v-expansion-panel-text>
@@ -200,5 +204,21 @@ export default {
 <style scoped>
 .v-expansion-panel-text {
   text-align: justify;
+}
+
+.v-card-text {
+  text-align: justify;
+}
+
+.extrait {
+  padding: 2%;
+}
+
+.v-expansion-panel-title {
+  color: "secondary";
+}
+
+.comments-text {
+  padding-top: 0;
 }
 </style>

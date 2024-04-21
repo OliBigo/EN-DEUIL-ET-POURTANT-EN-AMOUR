@@ -59,7 +59,7 @@ export default {
         <v-col>
           <v-text-field
             v-model="inputNickname"
-            label="Pseudonyme"
+            label="Nom"
             required
             outlined
           ></v-text-field>
@@ -87,7 +87,7 @@ export default {
           ></v-textarea>
         </v-col>
       </v-row>
-      <v-btn @click="addComment" color="primary">Ajouter un commentaire</v-btn>
+      <v-btn @click="addComment" color="primary">Soumettre</v-btn>
     </v-container>
 
     <v-alert v-model="showAlert" :color="alertColor">
