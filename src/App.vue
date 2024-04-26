@@ -1,12 +1,10 @@
 <script>
 import imageCouverture from "@/assets/En_deuil_et_pourtant_en_amour_-_Suzanne_Bougie_et_Real_Burelle.jpg";
-import PDFViewer from "pdf-viewer-vue";
 import Authors from "@/components/Authors.vue";
 import AccordionSummary from "@/components/AccordionSummary.vue";
 
 export default {
   components: {
-    PDFViewer,
     Authors,
     AccordionSummary,
   },
