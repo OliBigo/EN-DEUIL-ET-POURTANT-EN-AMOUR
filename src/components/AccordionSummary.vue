@@ -77,32 +77,46 @@ const dataSommaire = {
 
 export default {
   mounted() {
+    const parentElement = document.getElementById("comments");
+    const button = document.getElementById("comments-button");
     const text = document.createElement("p");
     text.style.textAlign = "justify";
     text.style.padding = "5px 24px 0px 24px";
-    //text.style.cursor = "pointer";
+    text.style.cursor = "pointer";
     text.style.fontSize = "0.9em";
     text.style.color = "#696969";
-    /*text.onmouseenter = () => {
+
+    button.onmouseenter = () => {
       text.style.backgroundColor = "#F6F6F6";
+    };
+    button.onmouseleave = () => {
+      text.style.backgroundColor = "transparent";
+      button.style.backgroundColor = "transparent";
+    };
+
+    text.onmouseenter = () => {
+      text.style.backgroundColor = "#F6F6F6";
+      button.style.backgroundColor = "#F6F6F6";
     };
     text.onmouseleave = () => {
       text.style.backgroundColor = "transparent";
-    };*/
+      button.style.backgroundColor = "transparent";
+    };
 
     const node = document.createTextNode(
       "Après votre lecture, cliquez ici pour ajouter vos commentaires. Nous aimerions beaucoup connaître vos impressions. Ce sera notre plus belle récompense. Merci à l'avance!"
     );
     text.appendChild(node);
-    const parentElement = document.getElementById("comments");
-    console.log(document.getElementById("comments").childNodes[1])
+    
     text.onclick = () => {
-      this.panel = 5;
-      console.log("allo")
-      document.getElementById("comments").scrollIntoView();
+      if (this.panel === 5) {
+        this.panel = undefined;
+      } else {
+        this.panel = 5;
+        document.getElementById("comments").scrollIntoView();
+      }
     };
     parentElement.insertBefore(text, parentElement.childNodes[5]);
-    //document.getElementById("comments").appendChild(text);
   },
   components: {
     Comments,
@@ -120,6 +134,7 @@ export default {
 </script>
 
 <template>
+  <i>Cliquer sur la petite flèche à droite pour voir le contenu de chaque élément</i>
   <v-expansion-panels variant="accordion" v-model="panel">
     <v-expansion-panel>
       <v-expansion-panel-title>Sommaire</v-expansion-panel-title>
@@ -191,7 +206,7 @@ export default {
     </v-expansion-panel>
 
     <v-expansion-panel id="comments">
-      <v-expansion-panel-title
+      <v-expansion-panel-title id="comments-button"
         >Ajoutez vos commentaires
       </v-expansion-panel-title>
       <v-expansion-panel-text>
