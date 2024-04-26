@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.9.0",
-    "pdf-viewer-vue": "^0.2.7",
     "vue": "^3.4.21",
     "vuetify": "^3.5.15"
   },
