@@ -107,7 +107,7 @@ export default {
       "Après votre lecture, cliquez ici pour ajouter vos commentaires. Nous aimerions beaucoup connaître vos impressions. Ce sera notre plus belle récompense. Merci à l'avance!"
     );
     text.appendChild(node);
-    
+
     text.onclick = () => {
       if (this.panel === 5) {
         this.panel = undefined;
@@ -128,13 +128,17 @@ export default {
       dataSommaire,
       pdf,
       epub,
+      page: 1,
     };
   },
 };
 </script>
 
 <template>
-  <i>Cliquer sur la petite flèche à droite pour voir le contenu de chaque élément</i>
+  <i
+    >Cliquer sur la petite flèche à droite pour voir le contenu de chaque
+    élément</i
+  >
   <v-expansion-panels variant="accordion" v-model="panel">
     <v-expansion-panel>
       <v-expansion-panel-title>Sommaire</v-expansion-panel-title>
@@ -168,11 +172,9 @@ export default {
     </v-expansion-panel>
 
     <v-expansion-panel>
-      <v-expansion-panel-title
-        >Qu'en pense le comité de lecture</v-expansion-panel-title
-      >
+      <v-expansion-panel-title>Commentaires</v-expansion-panel-title>
       <v-expansion-panel-text>
-        <v-list lines="two">
+        <v-list lines="one" id="default-comments" v-if="page === 1">
           <v-list-item v-for="(comment, i) in dataSommaire.feedback" :key="i">
             <v-card variant="tonal">
               <v-card-text
@@ -185,6 +187,7 @@ export default {
             </v-card>
           </v-list-item>
         </v-list>
+        <comments :page="page" @update:page="page = $event" />
       </v-expansion-panel-text>
     </v-expansion-panel>
 
@@ -235,5 +238,9 @@ export default {
 
 .comments-text {
   padding-top: 0;
+}
+
+#default-comments {
+  padding-bottom: 0;
 }
 </style>
