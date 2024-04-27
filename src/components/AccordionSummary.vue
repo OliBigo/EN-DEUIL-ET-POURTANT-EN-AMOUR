@@ -81,7 +81,7 @@ export default {
     const button = document.getElementById("comments-button");
     const text = document.createElement("p");
     text.style.textAlign = "justify";
-    text.style.padding = "5px 24px 0px 24px";
+    text.style.padding = "10px 24px 0px 24px";
     text.style.cursor = "pointer";
     text.style.fontSize = "0.9em";
     text.style.color = "#696969";
@@ -104,7 +104,7 @@ export default {
     };
 
     const node = document.createTextNode(
-      "Après votre lecture, cliquez ici pour ajouter vos commentaires. Nous aimerions beaucoup connaître vos impressions. Ce sera notre plus belle récompense. Merci à l'avance!"
+      "Après votre lecture, nous aimerions beaucoup connaître vos impressions. Revenez visiter notre site WEB et cliquez sur AJOUTER VOTRE COMMENTAIRE. Ce sera notre plus belle récompense."
     );
     text.appendChild(node);
 
@@ -116,7 +116,7 @@ export default {
         document.getElementById("comments").scrollIntoView();
       }
     };
-    parentElement.insertBefore(text, parentElement.childNodes[5]);
+    parentElement.insertBefore(text, parentElement.childNodes[1]);
   },
   components: {
     Comments,
@@ -210,7 +210,7 @@ export default {
 
     <v-expansion-panel id="comments">
       <v-expansion-panel-title id="comments-button"
-        >Ajoutez vos commentaires
+        >Ajouter votre commentaire
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <add-comment />
