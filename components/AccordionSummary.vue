@@ -2,7 +2,7 @@
 import Comments from "@/components/Comments.vue";
 import pdf from "@/public/EN_DEUIL_ET_POURTANT_NUMÉRIQUE_24_MARS.pdf";
 import epub from "@/public/EN_DEUIL_ET_POURTANT_EN_AMOUR_19_avril_2024.epub";
-import AddComment from "./AddComment.vue";
+import AddComment from "@/components/AddComment.vue";
 const dataSommaire = {
   titre: [
     "En deuil et pourtant en amour",
