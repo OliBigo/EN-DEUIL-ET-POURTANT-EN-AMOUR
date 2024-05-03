@@ -73,6 +73,10 @@ export default {
   text-align: left !important;
 }
 
+.v-card-text {
+  text-align: justify;
+}
+
 #comments-top {
   padding-top: 0;
 }
