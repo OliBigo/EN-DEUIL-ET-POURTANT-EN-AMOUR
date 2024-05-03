@@ -61,7 +61,7 @@ export default {
         <v-card-subtitle>{{
           new Date(comment.createdAt).toLocaleString()
         }}</v-card-subtitle>
-        <v-card-text>{{ comment.content }}</v-card-text>
+        <v-card-text id="comment">{{ comment.content }}</v-card-text>
       </v-card>
     </v-list-item>
   </v-list>
@@ -73,8 +73,8 @@ export default {
   text-align: left !important;
 }
 
-:deep(.v-card-text) {
-  text-align: justify !important;
+#comment {
+  text-align: justify;
 }
 
 #comments-top {
