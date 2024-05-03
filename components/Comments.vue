@@ -73,8 +73,8 @@ export default {
   text-align: left !important;
 }
 
-.v-card-text {
-  text-align: justify;
+:deep(.v-card-text) {
+  text-align: justify !important;
 }
 
 #comments-top {
