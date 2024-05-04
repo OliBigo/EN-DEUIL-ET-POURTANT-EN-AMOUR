@@ -145,7 +145,11 @@ export default {
   },
   methods: {
     openPanel(index) {
-      this.panel = [4, index];
+      if (this.panel.includes(index)) {
+        this.panel = [4];
+      } else {
+        this.panel = [4, index];
+      }
     },
   }
 };
@@ -157,7 +161,7 @@ export default {
     élément</i
   >
   <v-expansion-panels variant="accordion" v-model="panel" multiple>
-    <v-expansion-panel @click="openPanel(0)">
+    <v-expansion-panel  @click.capture.stop="openPanel(0)">
       <v-expansion-panel-title>Sommaire</v-expansion-panel-title>
       <v-expansion-panel-text
         v-for="(summ, i) in dataSommaire.sommaire"
@@ -166,7 +170,7 @@ export default {
       >
     </v-expansion-panel>
 
-    <v-expansion-panel @click="openPanel(1)">
+    <v-expansion-panel  @click.capture.stop="openPanel(1)">
       <v-expansion-panel-title>Chapitres</v-expansion-panel-title>
       <v-expansion-panel-text
         ><v-list :lines="false">
@@ -178,7 +182,7 @@ export default {
       ></v-expansion-panel-text>
     </v-expansion-panel>
 
-    <v-expansion-panel @click="openPanel(2)">
+    <v-expansion-panel  @click.capture.stop="openPanel(2)">
       <v-expansion-panel-title>Extrait</v-expansion-panel-title>
       <v-expansion-panel-text
         v-for="(text, i) in dataSommaire.extrait"
@@ -188,7 +192,7 @@ export default {
       </v-expansion-panel-text>
     </v-expansion-panel>
 
-    <v-expansion-panel @click="openPanel(3)">
+    <v-expansion-panel  @click.capture.stop="openPanel(3)">
       <v-expansion-panel-title>Commentaires</v-expansion-panel-title>
       <v-expansion-panel-text>
         <v-list lines="one" id="default-comments" v-if="page === 1">
@@ -233,7 +237,7 @@ export default {
       </v-expansion-panel-text>
     </v-expansion-panel>
 
-    <v-expansion-panel id="comments" @click="openPanel(5)">
+    <v-expansion-panel id="comments"  @click.capture.stop="openPanel(5)">
       <v-expansion-panel-title id="comments-button"
         >Ajouter votre commentaire
       </v-expansion-panel-title>

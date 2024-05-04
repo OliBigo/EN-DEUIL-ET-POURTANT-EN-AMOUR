@@ -1,7 +1,5 @@
 <script>
-import Comments from '@/components/Comments.vue';
 export default {
-  components: { Comments },
   data() {
     return {
       cusdisAppId: import.meta.env.VITE_CUSDIS_APP_ID,
@@ -94,8 +92,6 @@ export default {
       {{ alertColor === "success" ? "Votre commentaire sera ajouté" : "Une erreur c'est produite lors de l'ajout du commentaire" }}
     </v-alert>
   </v-form>
-
-  <comments />
 </template>
 
 <style scoped></style>
