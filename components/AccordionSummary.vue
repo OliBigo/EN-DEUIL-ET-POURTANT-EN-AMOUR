@@ -151,7 +151,7 @@ export default {
         this.panel = [4, index];
       }
     },
-  }
+  },
 };
 </script>
 
@@ -161,8 +161,10 @@ export default {
     élément</i
   >
   <v-expansion-panels variant="accordion" v-model="panel" multiple>
-    <v-expansion-panel  @click.capture.stop="openPanel(0)">
-      <v-expansion-panel-title>Sommaire</v-expansion-panel-title>
+    <v-expansion-panel>
+      <v-expansion-panel-title @click.capture.stop="openPanel(0)"
+        >Sommaire</v-expansion-panel-title
+      >
       <v-expansion-panel-text
         v-for="(summ, i) in dataSommaire.sommaire"
         :key="i"
@@ -170,8 +172,10 @@ export default {
       >
     </v-expansion-panel>
 
-    <v-expansion-panel  @click.capture.stop="openPanel(1)">
-      <v-expansion-panel-title>Chapitres</v-expansion-panel-title>
+    <v-expansion-panel>
+      <v-expansion-panel-title @click.capture.stop="openPanel(1)"
+        >Chapitres</v-expansion-panel-title
+      >
       <v-expansion-panel-text
         ><v-list :lines="false">
           <v-list-item
@@ -182,8 +186,10 @@ export default {
       ></v-expansion-panel-text>
     </v-expansion-panel>
 
-    <v-expansion-panel  @click.capture.stop="openPanel(2)">
-      <v-expansion-panel-title>Extrait</v-expansion-panel-title>
+    <v-expansion-panel>
+      <v-expansion-panel-title @click.capture.stop="openPanel(2)"
+        >Extrait</v-expansion-panel-title
+      >
       <v-expansion-panel-text
         v-for="(text, i) in dataSommaire.extrait"
         :key="i"
@@ -192,8 +198,10 @@ export default {
       </v-expansion-panel-text>
     </v-expansion-panel>
 
-    <v-expansion-panel  @click.capture.stop="openPanel(3)">
-      <v-expansion-panel-title>Commentaires</v-expansion-panel-title>
+    <v-expansion-panel>
+      <v-expansion-panel-title @click.capture.stop="openPanel(3)"
+        >Commentaires</v-expansion-panel-title
+      >
       <v-expansion-panel-text>
         <v-list lines="one" id="default-comments" v-if="page === 1">
           <v-list-item v-for="(comment, i) in dataSommaire.feedback" :key="i">
@@ -238,7 +246,9 @@ export default {
     </v-expansion-panel>
 
     <v-expansion-panel id="comments">
-      <v-expansion-panel-title id="comments-button" @click.capture.stop="openPanel(5)"
+      <v-expansion-panel-title
+        id="comments-button"
+        @click.capture.stop="openPanel(5)"
         >Ajouter votre commentaire
       </v-expansion-panel-title>
       <v-expansion-panel-text>
