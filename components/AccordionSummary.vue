@@ -237,8 +237,8 @@ export default {
       </v-expansion-panel-text>
     </v-expansion-panel>
 
-    <v-expansion-panel id="comments"  @click.capture.stop="openPanel(5)">
-      <v-expansion-panel-title id="comments-button"
+    <v-expansion-panel id="comments">
+      <v-expansion-panel-title id="comments-button" @click.capture.stop="openPanel(5)"
         >Ajouter votre commentaire
       </v-expansion-panel-title>
       <v-expansion-panel-text>
